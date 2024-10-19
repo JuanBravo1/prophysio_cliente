@@ -1,0 +1,350 @@
+/* General Header Styles */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  /* Estilos generales para auth-buttons-mobile */
+.auth-buttons-mobile {
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    gap: 20px;
+    position: absolute; /* Posicionamos de forma absoluta */
+    right: 60px; /* Justo al lado del menú hamburguesa */
+    top: 20px;
+  }
+  
+  .icon-profile, .icon-admin, .icon-logout, .icon-login, .icon-register {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* Estilo para el icono de Admin */
+  .icon-admin {
+    color: #d7a323; /* Color dorado */
+  }
+  
+  .icon-admin:hover {
+    color: #03a993; /* Cambia a color teal al pasar el mouse */
+  }
+  
+  /* Estilo para el icono de Cerrar Sesión */
+  .icon-logout {
+    color: #d7a323;
+  }
+  
+  .icon-logout:hover {
+    color: #03a993; /* Cambia a color teal al pasar el mouse */
+  }
+  
+  /* Estilo para el icono de Entrar */
+  .icon-login {
+    color: #00bfa6; /* Teal */
+  }
+  
+  .icon-login:hover {
+    color: #d7a323; /* Cambia a color dorado al pasar el mouse */
+  }
+  
+  /* Estilo para el icono de Empezar */
+  .icon-register {
+    color: #d7a323;
+  }
+  
+  .icon-register:hover {
+    color: #03a993; /* Cambia a color teal al pasar el mouse */
+  }
+  
+  /* Mostrar auth-buttons-mobile solo en pantallas pequeñas */
+ 
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: auto;
+    height: 50px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  .logo-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d7a323; /* Gold color */
+  }
+  
+  .logo-container p {
+    margin: 10px;
+    font-size: 26px;
+    color: #03a993; /* Teal color */
+    margin-left: 5px;
+  }
+  
+  /* Navigation Styles */
+  .nav-menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-menu ul {
+    display: flex;
+    gap: 40px; /* Aumenta el espacio entre los elementos */
+    list-style: none;
+    margin-right: 20px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #00bfa6;
+    font-size: 21px; /* Aumenta el tamaño de fuente */
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    color: #d7a323; /* Cambia a dorado en hover */
+  }
+  
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #d7a323; /* Color dorado */
+    transition: width 0.3s ease;
+  }
+  
+  .nav-menu a:hover::after {
+    width: 100%; /* Subrayado dorado animado */
+  }
+  
+  /* Auth Buttons and Icons */
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio mayor entre el ícono y botones */
+  }
+  
+  .icon-profile {
+    font-size: 24px;
+    color: #03a993;
+    vertical-align: middle; /* Centra mejor el ícono con el texto */
+  }
+  
+  .btn-login, .btn-register, .btn-schedule, .btn-logout, .btn-admin {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-login {
+    background-color: white;
+    border: 2px solid #03a993;
+    color: #03a993;
+  }
+  
+  .btn-login:hover {
+    background-color: #03a993;
+    color: white;
+    border-color: white;
+  }
+  
+  .btn-register, .btn-schedule {
+    background-color: #d7a323;
+    border: none;
+    color: white;
+  }
+  
+  .btn-register:hover, .btn-schedule:hover {
+    background-color: #03a993;
+    color: white;
+    border: 2px solid #03a993;
+  }
+  
+  .btn-admin {
+    background-color: white;
+    border: 2px solid #d7a323;
+    color: #d7a323;
+  }
+  .btn-admin:hover {
+    background-color:  #d7a323;
+    color: white;
+  }
+  
+  .btn-logout {
+    background-color: white;
+    border: 2px solid #9b1414;
+    color: #9b1414;
+  }
+  
+  .btn-logout:hover {
+    background-color: #941c1c;
+    color: white;
+  }
+  
+  /* Hamburger Menu Styles */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+  }
+  
+  /* Overlay for the Menu */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+  }
+  @media (max-width: 1366px) {
+    .logo-container p{
+        display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    .nav-menu {
+      display: none; /* Oculta el menú de barra en pantallas pequeñas */
+    }
+    .auth-buttons {
+        display: none;
+      }
+   
+  
+    .hamburger-menu {
+      display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+    }
+  
+    .nav-menu.menu-open {
+      display: flex;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      height: 100vh;
+      width: 250px;
+      flex-direction: column;
+      background-color: white;
+      padding: 20px;
+      box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .auth-buttons {
+      flex-direction: column;
+    }
+    .auth-buttons-mobile {
+      display: flex; /* Solo visible en pantallas pequeñas */
+      align-items: center;
+      gap: 20px;
+      position: absolute; /* Mueve los íconos hacia la derecha */
+      right: 60px; /* Ajusta la distancia al lado del menú hamburguesa */
+      top: 20px; /* Alineado con el menú hamburguesa */
+    }
+  
+    /* Alinea el menú hamburguesa a la derecha */
+    .hamburger-menu {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  
+    /* Ocultar botones de autenticación en pantallas pequeñas */
+    .auth-buttons {
+      display: none; /* Oculta los botones grandes en pantallas pequeñas */
+    }
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+
+    .nav-menu {
+      display: none; /* Oculta el menú de barra en pantallas pequeñas */
+    }
+    .auth-buttons {
+        display: none;
+      }
+    .logo-title {
+       display: none;
+      }
+      
+      .logo-container p {
+        display: none;
+      }
+    
+  
+    .hamburger-menu {
+      display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+    }
+  
+    .nav-menu.menu-open {
+      display: flex;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      height: 100vh;
+      width: 250px;
+      flex-direction: column;
+      background-color: white;
+      padding: 20px;
+      box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .auth-buttons {
+      flex-direction: column;
+    }
+    .auth-buttons-mobile {
+      display: flex; /* Solo visible en pantallas pequeñas */
+      align-items: center;
+      gap: 20px;
+      position: absolute; /* Mueve los íconos hacia la derecha */
+      right: 60px; /* Ajusta la distancia al lado del menú hamburguesa */
+      top: 20px; /* Alineado con el menú hamburguesa */
+    }
+  
+    /* Alinea el menú hamburguesa a la derecha */
+    .hamburger-menu {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  
+    /* Ocultar botones de autenticación en pantallas pequeñas */
+    .auth-buttons {
+      display: none; /* Oculta los botones grandes en pantallas pequeñas */
+    }
+  }
+  

@@ -1,0 +1,517 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Contenedor principal */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra superior */
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.top-bar a {
+    color: #00c7c7;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-text span {
+    color: #00c7c7;
+}
+
+/* Menú de navegación (en pantallas grandes) */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    font-size: 20px;
+}
+
+.menu ul li:hover {
+    color: #00c7c7;
+}
+
+/* Botones en pantallas grandes */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: -29px;
+}
+
+.actions .btn {
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.actions .btn i {
+    margin-right: 8px;
+    /* Espacio entre el icono y el texto */
+}
+
+.btn-info {
+    padding: 10px 20px;
+    background-color: #ff7f00;
+    /* Color de fondo naranja */
+    color: white;
+    /* Texto blanco */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Negrita para el texto */
+    transition: background-color 0.3s ease;
+    /* Transición suave */
+    margin-top: 10px;
+    /* Espacio entre el botón y el texto superior */
+    margin-bottom: 20px;
+    /* Espacio entre el botón y la imagen inferior */
+}
+
+.btn-info:hover {
+    background-color: #e06d00;
+    /* Color de fondo al hacer hover (naranja más oscuro) */
+}
+
+.btn.blue {
+    background-color: #00c7c7;
+    color: #fff;
+}
+
+.btn.white {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.btn.orange {
+    background-color: #ff7f00;
+    color: #fff;
+}
+
+/* Botones Hover */
+.btn.blue:hover {
+    background-color: #009898;
+}
+
+.btn.white:hover {
+    background-color: #f0f0f0;
+}
+
+.btn.orange:hover {
+    background-color: #e06d00;
+}
+
+/* Menú lateral deslizante */
+/* Menú lateral deslizante */
+.side-menu {
+    position: fixed;
+    top: 0;
+    /* Asegura que el menú comience desde el borde superior */
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px 20px 20px 20px;
+    /* Asegura un espacio uniforme en los cuatro lados */
+    display: flex;
+    flex-direction: column;
+    /* Mantén la disposición en columna */
+    justify-content: flex-start;
+    /* Comienza el contenido desde la parte superior */
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.side-menu .close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    /* Asegura que el botón de cerrar no esté pegado a los enlaces */
+}
+
+.side-menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu nav ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.side-menu nav ul li:hover {
+    color: #00c7c7;
+}
+
+/* Botones dentro del menú lateral (móviles) */
+.actions-mobile .btn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Overlay para cerrar el menú al hacer clic fuera */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    margin-top: -10px;
+    /* Ajuste para subir el menú */
+    position: relative;
+    /* Se asegura de que el ajuste de margen lo suba */
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+}
+
+/* Sección Telerehabilitación */
+.example-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 80px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-box {
+    max-width: 50%;
+    padding: 0 20px;
+}
+
+.text-box h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+   
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.image-box img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.lightBlue-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #03a9938e;
+    padding: 80px;
+}
+
+.lightBlue-text {
+    font-size: 38px;
+    /* Texto más grande para el título */
+    font-weight: normal;
+    color: black;
+    max-width: 40%;
+    align-content: center;
+    /* Limita el ancho para que no ocupe toda la pantalla */
+}
+
+.lightBlue-paragraph {
+    font-size: 16px;
+    color: black;
+    max-width: 40%; /* Limita el ancho para mantener alineado el texto */
+    line-height: 1.8; /* Mejora la legibilidad */
+    text-align: center; /* Alinea el texto a la derecha */
+
+}
+/* Section Styles */
+.offerings-section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .section-header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .section-header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+  }
+  
+  /* Grid Layout */
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    gap: 20px;
+  }
+  
+  .offering-item {
+    text-align: center;
+  }
+  
+  .offering-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .offering-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+  
+  .offering-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .offerings-grid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .lightBlue-container{
+        flex-direction: column;
+        align-items: center;
+        padding-left: -20px;  
+        padding-right: -20px; 
+    }
+    .offerings-grid {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+  
+    .section-header h2 {
+      font-size: 28px;
+    }
+  
+    .section-header p {
+      font-size: 16px;
+    }
+  
+    .offering-item h3 {
+      font-size: 20px;
+    }
+  
+    .offering-item p {
+      font-size: 14px;
+    }
+  }
+  
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Ocultar el menú lateral y el icono del menú hamburguesa en pantallas grandes */
+@media (min-width: 1000px) {
+    .hamburger {
+        display: none;
+        /* Ocultar el icono hamburguesa en pantallas grandes */
+    }
+
+    .side-menu {
+        display: none;
+        /* Asegurar que el menú lateral no sea visible en pantallas grandes */
+    }
+}
+
+/* Mostrar el menú lateral y el icono del menú hamburguesa en pantallas pequeñas */
+
+
+
+/* Responsividad para pantallas móviles */
+@media (max-width: 600px) {
+
+    .logo-text {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .btn-info {
+        font-size: 0.9rem;
+        /* Tamaño de fuente más pequeño en móviles */
+        padding: 8px 16px;
+        /* Ajustar el padding en pantallas pequeñas */
+    }
+
+    .icons-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        /* Espacio entre el ícono de perfil y el menú hamburguesa */
+        margin-top: 20px;
+    }
+
+    .home-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-text {
+        font-size: 25px;
+    }
+
+    .hamburger {
+        display: flex;
+        align-self: flex-end;
+
+        margin-bottom: 10px;
+    }
+
+    /* Ocultar los botones y el menú en el header en pantallas pequeñas */
+    .actions {
+        display: none;
+    }
+
+    .actions profile-icon {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .example-content {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-box h1 {
+        font-size: 2rem;
+    }
+
+    .text-box p {
+        font-size: 0.9rem;
+    }
+
+    .image-box img {
+        width: 100%;
+        max-width: 400px;
+    }
+}

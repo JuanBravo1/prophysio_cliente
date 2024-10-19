@@ -1,0 +1,363 @@
+/* Link de "¿Olvidaste tu contraseña?" */
+.password-strength-text {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+.recaptcha-content{
+  display: flex;
+  justify-content: center;
+}
+.password-feedback {
+  color: #ff5722; /* Color para mostrar las sugerencias de mejora */
+  font-size: 0.8rem;
+}
+
+.password-strength-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0; /* Color de fondo de la barra */
+  border-radius: 5px;
+  margin-top: 5px;
+  position: relative;
+}
+
+/* Estilo de la barra dinámica que se ajusta según la puntuación */
+.password-strength-bar div {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Diferentes colores según el score */
+.strength-0 {
+  width: 20%;
+  background-color: #ff4d4d; /* Muy débil (rojo) */
+}
+
+.strength-1 {
+  width: 40%;
+  background-color: #ff944d; /* Débil (naranja) */
+}
+
+.strength-2 {
+  width: 60%;
+  background-color: #ffd24d; /* Media (amarillo) */
+}
+
+.strength-3 {
+  width: 80%;
+  background-color: #c8e6c9; /* Fuerte (verde claro) */
+}
+
+.strength-4 {
+  width: 100%;
+  background-color: #4caf50; /* Muy fuerte (verde) */
+}
+.password-tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  width: 300px;
+  z-index: 10;
+  height: 250px;
+  animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.password-tooltip p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 10px;
+}
+
+
+.forgot-password a {
+  color: #ff7f00;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #e06d00;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.otp-form {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  
+}
+.otp-inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.otp-inputs input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.otp-inputs input:focus {
+  border-color: #ff7f00;
+  outline: none;
+}
+
+
+
+/* Contenedor principal */
+.login-register-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding: 20px;
+  background-color: #f9f9f9;
+ 
+}
+
+.login-register-container.login .form-box {
+  height: 50%;
+  
+}
+.login-register-container.otp .form-box {
+  height: 40%;
+}
+form.otp-form{
+  animation: fadeIn 0.5s ease;
+}
+form.form.register-form.active {
+  animation: fadeIn 0.5s ease;
+}
+
+form.login-form {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Contenedor del formulario */
+.form-box {
+  width: 40%;
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 70%;
+  z-index: 2;
+  margin-left: 70px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease; /* Animación al mostrar */
+}
+
+/* Selector de formulario */
+.form-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-header button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #777;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.form-header button.active {
+  color:  #d7a323;
+  border-bottom: 2px solid #ff7f00;
+}
+
+.form-header button:not(.active):hover {
+  color: #00c7c7;
+  border-bottom: 2px solid #00c7c7;
+}
+
+/* Contenido del formulario con animación */
+.form-content {
+  position: relative;
+}
+
+.form {
+  
+  width: 100%;
+  opacity: 0;
+  transform: translateX(50px); /* Mueve el formulario hacia la derecha */
+ 
+  pointer-events: none; /* Evita la interacción con el formulario oculto */
+}
+
+.form.active {
+  opacity: 1;
+  transform: translateX(0); /* Vuelve a la posición inicial */
+  
+  pointer-events: auto; /* Activa la interacción solo en el formulario visible */
+}
+
+/* Estilos de formulario */
+.form-group {
+  margin-bottom: 20px;
+  width: -webkit-fill-available;
+}
+
+.form-group-inline {
+  display: flex;  
+  gap: 20px; /* Espacio entre los dos inputs */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-group input, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite cambiar el tamaño vertical */
+  min-height: 100px; /* Altura mínima */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interior */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para cuando el textarea está enfocado */
+textarea:focus, input:focus, select:focus {
+  border-color: #d7a323; /* Cambia el color del borde cuando está enfocado */
+  box-shadow: 0 0 5px rgba(255, 127, 0, 0.5); /* Sombra más intensa al enfocar */
+  outline: none; /* Elimina el contorno por defecto */
+}
+
+/* Botón de envío */
+.submit-btn {
+  background-color: #ff7f00;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e06d00;
+}
+
+/* Imagen dinámica */
+.image-container {
+  width: 50%;
+  text-align: center;
+  
+  height:70%;
+}
+
+.image-container img {
+  width: 80%;
+  height: 600px;
+  transition: opacity 0.5s ease;
+}
+
+/* Botón de administración y cerrar sesión */
+.btn {
+  background-color: #00c7c7;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  
+}
+
+.btn:hover {
+  background-color: #009999;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .login-register-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  
+  .form-box {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 0;
+    height: 70%;
+    margin-left: 0;
+  }
+
+  .image-container {
+    display: none;
+  }
+}

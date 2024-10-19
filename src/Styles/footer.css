@@ -1,0 +1,54 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+ 
+  
+  .main-content {
+    flex: 1; /* Este bloque toma todo el espacio disponible antes del footer */
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 20px; /* Espacio interno */
+  
+    width: 100%; /* Asegura que el footer ocupe todo el ancho de la pantalla */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la parte superior del footer */
+    position: fixed;
+    bottom: 0;
+    left: 0;;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(100%);
+    animation: slideIn 0.5s forwards;
+  }
+  
+  /* Texto dentro del footer */
+  .footer p {
+    margin: 0; /* Sin márgenes extra en los párrafos */
+    font-size: 14px; /* Tamaño de texto en el footer */
+    line-height: 1.5; /* Altura de línea adecuada para legibilidad */
+  }
+  
+  /* Responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 15px; /* Reduce el padding en pantallas pequeñas */
+      font-size: 12px; /* Ajusta el tamaño de la fuente */
+    }
+  
+    .footer p {
+      font-size: 12px; /* Ajusta el tamaño del texto dentro del footer */
+    }
+  }
+  

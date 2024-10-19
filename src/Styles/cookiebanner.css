@@ -1,0 +1,74 @@
+/* Estilo del banner de cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #323232;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transform: translateY(100%);
+    animation: slideIn 0.5s forwards;
+  }
+  
+  /* Botón de aceptar cookies */
+  .btn-accept {
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .link-cookies{
+    color: #00c7c7;
+  }
+  .btn-accept:hover {
+    background-color: #e06d00;
+  }
+  
+  /* Transición al mostrar el banner */
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Transición al ocultar el banner */
+  .cookie-banner.hidden {
+    animation: slideOut 0.5s forwards;
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  /* Estilo responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .cookie-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    .btn-accept {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
